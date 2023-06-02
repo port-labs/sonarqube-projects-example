@@ -11,7 +11,6 @@ Create the SonarQube project blueprint in Port [using this json file](./resource
 ## Variables
 The list of required variables to run this project are:
 - `SONARQUBE_ORGANIZATION_ID`
-- `WEBHOOK_URL`
 - `SONARQUBE_URL`
 - `SONARQUBE_TOKEN`
 - `PORT_CLIENT_ID`
