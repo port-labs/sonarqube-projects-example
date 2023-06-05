@@ -1,19 +1,62 @@
 ```json showLineNumbers
 {
-  "identifier": "sonarqubeProject",
-  "description": "This blueprint represents a SonarQube project in our software catalog",
-  "title": "SonarQube Project",
+  "identifier": "sonarCloudAnalysis",
+  "description": "This blueprint represents a SonarCloud Analysis in our software catalog",
+  "title": "SonarQube Cloud Analysis",
   "icon": "sonarqube",
   "schema": {
     "properties": {
-      "organization": {
+      "serverUrl": {
         "type": "string",
-        "title": "Organization Name"
+        "format": "url",
+        "title": "Server URL"
+      },
+      "projectName": {
+        "type": "string",
+        "title": "Project name"
       },
       "projectUrl": {
         "type": "string",
         "format": "url",
         "title": "Project URL"
+      },
+      "branchName": {
+        "type": "string",
+        "title": "Branch Name"
+      },
+      "branchType": {
+        "type": "string",
+        "title": "Branch Type"
+      },
+      "branchUrl": {
+        "type": "string",
+        "format": "url",
+        "title": "Branch URL"
+      },
+      "qualityGateName": {
+        "type": "string",
+        "title": "Quality Gate Name"
+      },
+      "qualityGateStatus": {
+        "type": "string",
+        "title": "Quality Gate Status",
+        "description": "General status of quality checks"
+      },
+      "qualityGateConditions": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "title": "Quality Gate Conditions",
+        "description": "Conditions of the qaulity gate"
+      },
+      "status": {
+        "type": "string",
+        "title": "General Status"
+      },
+      "coverage": {
+        "title": "Coverage",
+        "type": "number"
       }
     },
     "required": []

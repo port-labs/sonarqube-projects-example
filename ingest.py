@@ -21,7 +21,7 @@ access_token = token_response.json()['accessToken']
 headers = {
 	'Authorization': f'Bearer {access_token}'
 }
-blueprint_id = 'sonarqubeProject'
+blueprint_id = 'sonarCloudAnalysis'
 
 
 def create_port_entity(entity_object):
@@ -54,8 +54,9 @@ def retrieve_sonarqube_projects():
         "identifier": component["key"],
         "title": component["name"],
         "properties": {
-            "organization": component["organization"],
-            "projectURL": f'{SONARQUBE_URL}/project/overview?id={component["key"]}'
+            "serverUrl": SONARQUBE_URL,
+            "projectName": component["name"],
+            "projectUrl": f'{SONARQUBE_URL}/project/overview?id={component["key"]}'
         },
         "relations": {}
         }
